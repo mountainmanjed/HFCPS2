@@ -1,0 +1,51 @@
+CPS1 to CPS2 Interleaving to get HF graphics working on CPS2 graphic set up
+
+Hyper Fighting Graphics go to 0xC000 which doesn't fill up the first 4 gfx roms on ssf2
+
+Going by Mame's 16x16 Viewer
+Hyper Fighting
+Part 1 0x0000 ~ 0x3FFF
+1m3a
+2m4a
+3m5a
+4m6a
+
+Part 2 0x4000 ~ 0x7FFF
+5m7a
+6m8a
+7m9a
+8m10a
+
+Part 3 0x8000 ~ 0xBFFF
+10m3c
+11m4c
+12m5c
+13m6c
+
+Super Street Fighter 2
+0x0000 ~ 0xFFFF 
+13m
+15m
+17m
+19m
+
+0x10000 ~ 0x17FFF
+14m
+16m
+18m
+20m
+
+To Interlace
+You split each HF gfx rom in half.
+0x00000 ~ 0x3FFFF = part 1. 0x40000 ~ 0x7FFFF = part 2 
+And, have it interleave with each other every 2 bytes.
+
+1m3ap1+1m3ap2 = first part of rom 13
+
+3m5ap1+3m5ap2 = first part of rom 15
+
+2m4ap1+2m4ap2 = first part of rom 17
+
+4m6ap1+4m6ap2 = first part of rom 19
+
+
