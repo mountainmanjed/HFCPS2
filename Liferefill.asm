@@ -3,8 +3,8 @@
 41F9 00FF 844E		lea $ff844e,A0
 43F9 00FF 884E		lea $ff884e,A1
 45F9 00FF F100		lea $fff100,A2
-6108				bsr; PC+$08
-C149				exg A0,A1
+6108		     	bsr; PC+$08
+C149	  	    	exg A0,A1
 45F9 00FF F200		lea $fff200,A2; 2P timer
 
 ;Timer set and countdown 6
